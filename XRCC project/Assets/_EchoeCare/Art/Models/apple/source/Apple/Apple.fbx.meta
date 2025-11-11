@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 55050f957eeb548dba58a3afd36cc329
+guid: b3e6711850dc7434a8cc11163632518d
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: glasses
-    second: {fileID: 2100000, guid: 541b4215f392345a793e0e38ced44b19, type: 2}
+      name: Apple
+    second: {fileID: 2100000, guid: 19db1a295ba3f423e9f48d726f8447e4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
