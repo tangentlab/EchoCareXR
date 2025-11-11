@@ -1,4 +1,4 @@
-# EchoeCareXR
+# EchoCareXR
 XRCC memory app
 
 Building with 
