@@ -525,7 +525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 238129611}
   m_Layer: 0
-  m_Name: ----- MANGERS
+  m_Name: ----- MANAGERS
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1374,7 +1374,7 @@ MonoBehaviour:
   requestRecordAudioPermissionOnStartup: 0
   requestPassthroughCameraAccessPermissionOnStartup: 0
   _localDimming: 1
-  _trackingOriginType: 2
+  _trackingOriginType: 1
   usePositionTracking: 1
   useRotationTracking: 1
   useIPDInPositionTracking: 1
