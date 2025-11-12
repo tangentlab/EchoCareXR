@@ -4,7 +4,7 @@ namespace ECHO
 {
 	public class EchoManager : MonoBehaviour
 	{
-		string userName = "Maria";
+		private string userName = "Maria";
 
 		public UserInfo userInfo = new UserInfo();
 		public MenuHandler menuHandler;
@@ -15,7 +15,7 @@ namespace ECHO
 		// Start is called once before the first execution of Update after the MonoBehaviour is created
 		private void Start()
 		{
-			userInfo = new UserInfo();
+			userInfo = new UserInfo(userName);
 			print("EchoManager started.");
 			print($"User Name: {userInfo.userName}");
 
@@ -24,7 +24,6 @@ namespace ECHO
 			{
 				menuHandler.InitializeMenu();
 			}
-
 
 			if (companionHandler != null)
 			{
