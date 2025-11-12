@@ -8,6 +8,8 @@ namespace ECHO
 		public MenuHandler menuHandler;
 		public CompanionHandler companionHandler;
 
+		public TestTableHandler testTableHandler;
+
 		// Start is called once before the first execution of Update after the MonoBehaviour is created
 		private void Start()
 		{
@@ -15,23 +17,22 @@ namespace ECHO
 			print("EchoManager started.");
 			print($"User Name: {userInfo.userName}");
 
+			// Initialize Menu
 			if (menuHandler != null)
 			{
 				menuHandler.InitializeMenu();
 			}
-			else
-			{
-				Debug.LogWarning("MenuHandler is not assigned in EchoManager.");
-			}
+
 
 			if (companionHandler != null)
 			{
 				// CompanionHandler will handle its own initialization in Start
 				companionHandler.PositionInfrontOfUser();
 			}
-			else
+
+			if (testTableHandler != null)
 			{
-				Debug.LogWarning("CompanionHandler is not assigned in EchoManager.");
+				//testTableHandler.PositionTableInFrontOfUser();
 			}
 		}
 	}
