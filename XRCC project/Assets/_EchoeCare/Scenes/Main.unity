@@ -452,7 +452,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &173069929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3621,6 +3621,10 @@ PrefabInstance:
       propertyPath: companionHandler
       value: 
       objectReference: {fileID: 1881788049}
+    - target: {fileID: 81764232023090886, guid: 9afe8cfe488f9cd4f905d751113803d1, type: 3}
+      propertyPath: testTableHandler
+      value: 
+      objectReference: {fileID: 7609900095834140370}
     - target: {fileID: 2945671786496952935, guid: 9afe8cfe488f9cd4f905d751113803d1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.13588
@@ -3727,6 +3731,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aab19d8edf33a45c3b809ec594127a16, type: 3}
+--- !u!114 &7609900095834140370 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8525960347173180644, guid: aab19d8edf33a45c3b809ec594127a16, type: 3}
+  m_PrefabInstance: {fileID: 7609900095834140369}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 042d7f269f9c448749bc101f7e5cf774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3737,6 +3752,8 @@ SceneRoots:
   - {fileID: 1406921786}
   - {fileID: 1406731209754583603}
   - {fileID: 1933615911}
+  - {fileID: 260318299}
+  - {fileID: 7609900095834140369}
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 750359927}
@@ -3749,5 +3766,3 @@ SceneRoots:
   - {fileID: 1545029739}
   - {fileID: 1333171297}
   - {fileID: 92601241}
-  - {fileID: 260318299}
-  - {fileID: 7609900095834140369}
