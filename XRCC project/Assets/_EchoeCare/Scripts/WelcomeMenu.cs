@@ -8,10 +8,14 @@ public class WelcomeMenu : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        UpdateText();
+    }
+
+    private void UpdateText()
+    {
         if (helloText != null)
         {
             helloText.text = "Hello, " + PlayerPrefs.GetString("UserName", "Maria") + "!";
         }
     }
-
 }
