@@ -4,6 +4,8 @@ namespace ECHO
 {
 	public class EchoManager : MonoBehaviour
 	{
+		string userName = "Maria";
+
 		public UserInfo userInfo = new UserInfo();
 		public MenuHandler menuHandler;
 		public CompanionHandler companionHandler;
