@@ -50,6 +50,7 @@ MonoBehaviour:
   welcomeMenu: {fileID: 3750110470018202864}
   dateMenu: {fileID: 6783578344883033038}
   doNextMenu: {fileID: 3825997597910954167}
+  welcomeMenuDuration: 5
 --- !u!1001 &716689515729537803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -456,6 +457,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8181154523369255899, guid: e59551230fad8444eb4fab13012455b2, type: 3}
+      propertyPath: _canvas
+      value: 
+      objectReference: {fileID: 2418231781649053794}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -464,6 +469,11 @@ PrefabInstance:
 --- !u!224 &1714500542579937028 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7902896132867069688, guid: e59551230fad8444eb4fab13012455b2, type: 3}
+  m_PrefabInstance: {fileID: 8820188826105846268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &2418231781649053794 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 6622776347408785822, guid: e59551230fad8444eb4fab13012455b2, type: 3}
   m_PrefabInstance: {fileID: 8820188826105846268}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &6783578344883033038 stripped
