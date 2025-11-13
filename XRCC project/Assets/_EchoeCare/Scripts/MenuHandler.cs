@@ -7,6 +7,9 @@ namespace ECHO
 	{
 		public GameObject welcomeMenu;
 		public GameObject dateMenu;
+		public GameObject doNextMenu;
+
+
 
 		//hold list of menus
 
