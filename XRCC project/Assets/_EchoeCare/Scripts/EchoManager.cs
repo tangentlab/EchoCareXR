@@ -25,15 +25,27 @@ namespace ECHO
 				menuHandler.InitializeMenu();
 			}
 
-			if (companionHandler != null)
-			{
-				// CompanionHandler will handle its own initialization in Start
-				companionHandler.PositionInfrontOfUser();
-			}
+		}
 
+		public void StartDelayedRecallTask()
+		{
+			Debug.Log("Starting Delayed Recall Session...");
+			// Add logic to start the delayed recall session
+			RevealCompanion();
+			//desplay table after companion task introduction
 			if (testTableHandler != null)
 			{
-				//testTableHandler.PositionTableInFrontOfUser();
+				testTableHandler.DisplayTestTable();
+			}
+
+
+		}
+
+		public void RevealCompanion()
+		{
+			if (companionHandler != null)
+			{
+				companionHandler.RevealCompanion();
 			}
 		}
 	}
