@@ -6,11 +6,13 @@ namespace ECHO
 	{
 		private string userName = "Maria";
 
-		public UserInfo userInfo = new UserInfo();
 		public MenuHandler menuHandler;
 		public CompanionHandler companionHandler;
 
+		[Header("Tasks table")]
 		public TestTableHandler testTableHandler;
+
+		private UserInfo userInfo = new UserInfo();
 
 		// Start is called once before the first execution of Update after the MonoBehaviour is created
 		private void Start()
