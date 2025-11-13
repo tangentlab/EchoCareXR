@@ -1,36 +1,49 @@
+using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class GoodMorningMenu : MonoBehaviour
+namespace ECHO
 {
-    public TextMeshProUGUI welcomeText;
-    public TextMeshProUGUI dateText;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class GoodMorningMenu : MonoBehaviour
     {
-        UpdateText();
-    }
+        public TextMeshProUGUI welcomeText;
+        public TextMeshProUGUI dateText;
 
-    private void UpdateText()
-    {
-        //update welcome text
-        if (welcomeText != null)
+
+        // define action for public trigger
+        public UnityEvent menuAction;
+
+
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start()
         {
-            welcomeText.text = "Good Morning, " + PlayerPrefs.GetString("UserName", "User") + "!";
+            UpdateText();
         }
 
-        //update date text
-        if (dateText != null)
+        private void UpdateText()
         {
-            dateText.text = $"Today is {System.DateTime.Now.ToString("MMMM dd")}";
-        }
-    }
+            //update welcome text
+            if (welcomeText != null)
+            {
+                welcomeText.text = "Good Morning, " + PlayerPrefs.GetString("UserName", "User") + "!";
+            }
 
-    public void OnStartDayButtonPressed()
-    {
-        // Logic to start the day
-        Debug.Log("Start Day button pressed.");
+            //update date text
+            if (dateText != null)
+            {
+                dateText.text = $"Today is {System.DateTime.Now.ToString("MMMM dd")}";
+            }
+        }
+
+        public void OnStartDayButtonPressed()
+        {
+            // Logic to start the day
+            Debug.Log("Start Day button pressed.");
+            menuAction?.Invoke();
+        }
+
+
     }
 
 }
