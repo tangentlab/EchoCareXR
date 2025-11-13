@@ -25,6 +25,7 @@ namespace ECHO
 				menuHandler.InitializeMenu();
 			}
 
+			testTableHandler.Hide();
 		}
 
 		public void StartDelayedRecallTask()
@@ -35,10 +36,8 @@ namespace ECHO
 			//desplay table after companion task introduction
 			if (testTableHandler != null)
 			{
-				testTableHandler.DisplayTestTable();
+				testTableHandler.Show();
 			}
-
-
 		}
 
 		public void RevealCompanion()
