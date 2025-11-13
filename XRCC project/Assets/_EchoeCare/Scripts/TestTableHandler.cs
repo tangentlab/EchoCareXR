@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace ECHO
@@ -34,6 +35,9 @@ namespace ECHO
 
         }
 
-
+        internal void DisplayTestTable()
+        {
+            //throw new NotImplementedException();
+        }
     }
 }
