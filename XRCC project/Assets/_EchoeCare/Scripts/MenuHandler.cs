@@ -9,31 +9,26 @@ namespace ECHO
 		public GameObject dateMenu;
 		public GameObject doNextMenu;
 
-
+		public float welcomeMenuDuration = 5f;
 
 		//hold list of menus
 
 		internal void InitializeMenu()
 		{
 			// Initialize menu items here
-			if (welcomeMenu != null)
-			{
-				welcomeMenu.SetActive(true);
-			}
-			else
-			{
-				Debug.LogWarning("WelcomeMenu is not assigned in MenuHandler.");
-			}
+			if (welcomeMenu) welcomeMenu.SetActive(true);
 
-			if (dateMenu != null)
-			{
-				dateMenu.SetActive(false);
-			}
-			else
-			{
-				Debug.LogWarning("MainMenu is not assigned in MenuHandler.");
-			}
+			if (dateMenu) dateMenu.SetActive(false);
+			if (doNextMenu) doNextMenu.SetActive(false);
 
+			// hide welcome menu after 5 seconds and show date menu
+			Invoke(nameof(ShowDateMenu), welcomeMenuDuration);
+		}
+
+		private void ShowDateMenu()
+		{
+			welcomeMenu.SetActive(false);
+			dateMenu.SetActive(true);
 		}
 	}
 }
