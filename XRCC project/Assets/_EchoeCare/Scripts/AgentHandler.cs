@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace ECHO
@@ -9,8 +10,13 @@ namespace ECHO
 		// Start is called once before the first execution of Update after the MonoBehaviour is created
 		private void Start()
 		{
-			//PlayVoice();
-			PositionInfrontOfUser();
+			gameObject.SetActive(false);
+
+		}
+
+		// Update is called once per frame
+		private void Update()
+		{
 		}
 
 		private void PlayVoice()
@@ -41,9 +47,14 @@ namespace ECHO
 			transform.LookAt(new Vector3(userTransform.position.x, transform.position.y, userTransform.position.z));
 		}
 
-		// Update is called once per frame
-		private void Update()
+
+
+		internal void RevealCompanion()
 		{
+			//throw new NotImplementedException();
+			//PlayVoice();
+			gameObject.SetActive(true);
+			PositionInfrontOfUser();
 		}
 	}
 }

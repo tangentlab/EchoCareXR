@@ -6,11 +6,13 @@ namespace ECHO
 	{
 		private string userName = "Maria";
 
-		public UserInfo userInfo = new UserInfo();
 		public MenuHandler menuHandler;
 		public CompanionHandler companionHandler;
 
+		[Header("Tasks table")]
 		public TestTableHandler testTableHandler;
+
+		private UserInfo userInfo = new UserInfo();
 
 		// Start is called once before the first execution of Update after the MonoBehaviour is created
 		private void Start()
@@ -25,15 +27,26 @@ namespace ECHO
 				menuHandler.InitializeMenu();
 			}
 
-			if (companionHandler != null)
-			{
-				// CompanionHandler will handle its own initialization in Start
-				companionHandler.PositionInfrontOfUser();
-			}
+			testTableHandler.Hide();
+		}
 
+		public void StartDelayedRecallTask()
+		{
+			Debug.Log("Starting Delayed Recall Session...");
+			// Add logic to start the delayed recall session
+			RevealCompanion();
+			//desplay table after companion task introduction
 			if (testTableHandler != null)
 			{
-				//testTableHandler.PositionTableInFrontOfUser();
+				testTableHandler.Show();
+			}
+		}
+
+		public void RevealCompanion()
+		{
+			if (companionHandler != null)
+			{
+				companionHandler.RevealCompanion();
 			}
 		}
 	}
