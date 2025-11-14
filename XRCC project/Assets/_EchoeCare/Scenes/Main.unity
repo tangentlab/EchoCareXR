@@ -3673,6 +3673,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2453881646915795337, guid: 576519bade96341038648c443b64a880, type: 3}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 750359927}
+    - target: {fileID: 2453881646915795337, guid: 576519bade96341038648c443b64a880, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6579996858552982854, guid: 576519bade96341038648c443b64a880, type: 3}
       propertyPath: m_Name
       value: Main Menu
@@ -3869,6 +3877,10 @@ PrefabInstance:
     - target: {fileID: 17143161962885628, guid: aab19d8edf33a45c3b809ec594127a16, type: 3}
       propertyPath: m_Name
       value: Exercise Holder
+      objectReference: {fileID: 0}
+    - target: {fileID: 437632522303984263, guid: aab19d8edf33a45c3b809ec594127a16, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6371883796244289143, guid: aab19d8edf33a45c3b809ec594127a16, type: 3}
       propertyPath: m_LocalPosition.x
