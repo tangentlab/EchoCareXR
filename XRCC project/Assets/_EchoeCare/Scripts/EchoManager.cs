@@ -32,8 +32,9 @@ namespace ECHO
 
 		public void StartDelayedRecallTask()
 		{
-			Debug.Log("Starting Delayed Recall Session...");
+			Debug.Log("-- Starting Delayed Recall Session...");
 			// Add logic to start the delayed recall session
+
 			RevealCompanion();
 			//desplay table after companion task introduction
 			if (testTableHandler != null)

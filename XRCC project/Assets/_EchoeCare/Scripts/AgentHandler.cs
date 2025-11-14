@@ -11,7 +11,6 @@ namespace ECHO
 		private void Start()
 		{
 			gameObject.SetActive(false);
-
 		}
 
 		// Update is called once per frame
@@ -41,13 +40,12 @@ namespace ECHO
 			Transform userTransform = Camera.main.transform;
 			Vector3 forward = new Vector3(userTransform.forward.x, 0, userTransform.forward.z).normalized;
 			Vector3 targetPosition = userTransform.position + forward * 2.0f; // 2 meters in front
-			targetPosition.y = userTransform.position.y; // Keep the same height as the user
+
+			targetPosition.y = 0; //plane the companion on the ground level
 
 			transform.position = targetPosition;
 			transform.LookAt(new Vector3(userTransform.position.x, transform.position.y, userTransform.position.z));
 		}
-
-
 
 		internal void RevealCompanion()
 		{

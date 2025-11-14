@@ -12,6 +12,7 @@ namespace ECHO
 		public GameObject keyPrefab;
 		public GameObject potPrefab;
 		public GameObject cupPrefab;
+		public GameObject objectHolder;
 
 		[Header("Table Transform")]
 		public Transform tableTransform;
@@ -19,6 +20,12 @@ namespace ECHO
 		// Start is called once before the first execution of Update after the MonoBehaviour is created
 		private void Start()
 		{
+			InitializeTableItems();
+		}
+
+		private void InitializeTableItems()
+		{
+			//objectHolder.SetActive(false);
 		}
 
 		// position table in front of user
