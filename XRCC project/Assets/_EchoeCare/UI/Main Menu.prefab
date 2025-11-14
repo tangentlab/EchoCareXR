@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8048962683783114261}
   - component: {fileID: 4121621589808172310}
+  - component: {fileID: 2453881646915795337}
   m_Layer: 0
   m_Name: Main Menu
   m_TagString: Untagged
@@ -51,6 +52,20 @@ MonoBehaviour:
   dateMenu: {fileID: 6783578344883033038}
   doNextMenu: {fileID: 3825997597910954167}
   welcomeMenuDuration: 5
+--- !u!114 &2453881646915795337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6579996858552982854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e416343365a0d340be803f69515deb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Oculus.Interaction.Samples::Oculus.Interaction.Samples.LookAtTarget
+  _toRotate: {fileID: 0}
+  _target: {fileID: 0}
 --- !u!1001 &716689515729537803
 PrefabInstance:
   m_ObjectHideFlags: 0
