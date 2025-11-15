@@ -12,8 +12,8 @@ namespace ECHO
 		[SerializeField]
 		private string userName = "Maria";
 
-
 		[SerializeField] private PlayableDirector playableDirector;
+
 
 
 		[SerializeField] private OVRCameraRig cameraRig;
@@ -105,7 +105,6 @@ namespace ECHO
 			return cameraRig;
 		}
 
-
 		private void PlayTimeline(PlayableAsset timelineAsset = null)
 		{
 			if (playableDirector == null) return;
@@ -115,6 +114,5 @@ namespace ECHO
 
 			playableDirector.Play();
 		}
-
 	}
 }
