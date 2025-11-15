@@ -20,6 +20,7 @@ namespace ECHO
 		internal void StartExercise()
 		{
 			echoManager = EchoManager.Instance;
+
 			Debug.Log("-- Delayed Recall Exercise Started.");
 			echoManager.RevealCompanion();
 			echoManager.testTableHandler.ShowDelayedRecall();
