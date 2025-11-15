@@ -5,32 +5,36 @@ namespace ECHO
 {
 	public class CompanionHandler : MonoBehaviour
 	{
-		public AudioClip agentAudioClip;
+		public AudioClip welcome;
+		public AudioClip greeting;
+
+		[Header("Task Clips")]
+		public AudioClip taskIntroduction;
+
+		private AudioClip agentAudioClip;
+		private AudioSource audioSource;
 
 		// Start is called once before the first execution of Update after the MonoBehaviour is created
 		private void Start()
 		{
-			gameObject.SetActive(false);
+			audioSource = gameObject.AddComponent<AudioSource>();
+			Hide();
 		}
 
 		// Update is called once per frame
 		private void Update()
 		{
+			//maybe some animation or idle behavior
 		}
 
 		private void PlayVoice()
 		{
-			//agentAudioClip = Resources.Load<AudioClip>("Audio/Agent/starting delayed recall");
 			if (agentAudioClip != null)
 			{
 				// player after a short delay
-				AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+
 				audioSource.clip = agentAudioClip;
-				audioSource.PlayDelayed(5);
-			}
-			else
-			{
-				Debug.LogWarning("Agent audio clip not found in Resources/Audio/Agent/agent_greeting");
+				audioSource.Play();
 			}
 		}
 
@@ -53,6 +57,11 @@ namespace ECHO
 			//PlayVoice();
 			gameObject.SetActive(true);
 			PositionInfrontOfUser();
+		}
+
+		internal void Hide()
+		{
+			gameObject.SetActive(false);
 		}
 	}
 }
