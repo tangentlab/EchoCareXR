@@ -81,8 +81,9 @@ namespace ECHO
 			//Debug.Log("-- Starting Delayed Recall Session...");
 
 			PlayTimeline();
+
 			RevealCompanion();
-			//excerciseDelayedRecall.StartExercise();
+			excerciseDelayedRecall.StartExercise();
 		}
 
 		internal void StartTask2()
