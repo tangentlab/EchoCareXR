@@ -11,6 +11,10 @@ namespace ECHO
 		[SerializeField]
 		private string userName = "Maria";
 
+
+		[SerializeField] private OVRCameraRig cameraRig;
+
+		[Header("Handlers")]
 		public MenuHandler menuHandler;
 		public CompanionHandler companionHandler;
 
@@ -90,5 +94,10 @@ namespace ECHO
 				companionHandler.RevealCompanion();
 			}
 		}
-	}
+
+        internal OVRCameraRig GetCameraRig()
+		{
+			return cameraRig;
+        }
+    }
 }

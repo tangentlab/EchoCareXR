@@ -7,8 +7,6 @@ namespace ECHO
     {
         public UnityEvent menuAction;
 
-
-
         public void OnMenuButtonPressed()
         {
             // Logic to handle menu button press
