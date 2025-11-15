@@ -1,14 +1,11 @@
-using System;
 using UnityEngine;
-using UnityEngine.Timeline;
+
 
 namespace ECHO
 {
 	public class ExcerciseDelayedRecall : MonoBehaviour
 	{
-		public AudioClip[] clips;
-
-		public TimelineClip timeline;
+		[SerializeField] private AudioClip[] clips;
 
 		private EchoManager echoManager;
 
@@ -22,9 +19,6 @@ namespace ECHO
 			echoManager = EchoManager.Instance;
 		}
 
-		// Update is called once per frame
-		private void Update()
-		{
-		}
+
 	}
 }
