@@ -20,11 +20,13 @@ namespace ECHO
 		private AudioSource audioSource;
 
 		private OVRCameraRig cameraRig;
+		private EchoManager echoManager;
 
 		private void Awake()
 		{
 			audioSource = gameObject.GetComponent<AudioSource>();
-			//cameraRig = FindObjectOfType<OVRCameraRig>();
+			echoManager = EchoManager.Instance;
+			cameraRig = echoManager.GetCameraRig();
 		}
 
 		private void Play(AudioClip clip)
@@ -38,15 +40,17 @@ namespace ECHO
 
 		internal void InitializeMenu()
 		{
+
+
 			// Initialize menu items here
-			if (welcomeMenu) welcomeMenu.SetActive(true);
-			Play(welcomeAudioClip);
+			if (welcomeMenu) welcomeMenu.SetActive(false);
+
 
 			if (dateMenu) dateMenu.SetActive(false);
 			if (doNextMenu) doNextMenu.SetActive(false);
 
 			// hide welcome menu after 5 seconds and show date menu
-			Invoke(nameof(ShowDateMenu), welcomeMenuDuration);
+			Invoke(nameof(ShowWelcomeMenu), welcomeMenuDuration);
 		}
 
 		public void PostitionMenuInFront()
@@ -55,22 +59,31 @@ namespace ECHO
 			var pos = cameraRig.centerEyeAnchor.position;
 
 			const float dist = 1.0f;
-			Transform userTransform = Camera.main.transform;
-			Vector3 forward = new Vector3(userTransform.forward.x, 0, userTransform.forward.z).normalized;
-			Vector3 targetPosition = userTransform.position + forward * dist; // 2 meters in front
+			var userTransform = Camera.main.transform;
+			var forward = new Vector3(userTransform.forward.x, 0, userTransform.forward.z).normalized;
+			var targetPosition = userTransform.position + forward * dist; // 2 meters in front
 
 			targetPosition.y = userTransform.position.y;
 
 			transform.position = targetPosition;
-			transform.LookAt(new Vector3(userTransform.position.x, transform.position.y, userTransform.position.z));
+			//transform.LookAt(new Vector3(userTransform.position.x, transform.position.y, userTransform.position.z));
+		}
+
+		private void ShowWelcomeMenu()
+		{
+			PostitionMenuInFront();
+			welcomeMenu.SetActive(true);
+
+			Play(welcomeAudioClip);
+
+			Invoke(nameof(ShowDateMenu), welcomeMenuDuration);
 		}
 
 		private void ShowDateMenu()
 		{
+			Play(morningClip);
 			welcomeMenu.SetActive(false);
 			dateMenu.SetActive(true);
-
-			Play(morningClip);
 		}
 	}
 }

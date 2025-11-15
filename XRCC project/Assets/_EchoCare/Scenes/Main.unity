@@ -2890,6 +2890,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 81764232023090886, guid: 9afe8cfe488f9cd4f905d751113803d1, type: 3}
+      propertyPath: cameraRig
+      value: 
+      objectReference: {fileID: 750359925}
+    - target: {fileID: 81764232023090886, guid: 9afe8cfe488f9cd4f905d751113803d1, type: 3}
       propertyPath: menuHandler
       value: 
       objectReference: {fileID: 1406731209754583604}
