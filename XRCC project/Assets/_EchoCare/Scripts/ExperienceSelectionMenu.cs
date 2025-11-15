@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Timeline;
 
@@ -5,13 +6,16 @@ namespace ECHO
 {
 	public class ExperienceSelectionMenu : MonoBehaviour
 	{
-		public TimelineClip timeline;
-
 		private EchoManager echoManager;
 
 		private void Awake()
 		{
 			echoManager = EchoManager.Instance;
+		}
+
+		private void OnEnable()
+		{
+			transform.DOScale(Vector3.one, 0.5f).From(Vector3.zero).SetEase(Ease.OutBack);
 		}
 
 		public void SelectDelayed()
