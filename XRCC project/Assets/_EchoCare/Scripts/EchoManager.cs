@@ -1,9 +1,14 @@
+using System;
 using UnityEngine;
 
 namespace ECHO
 {
 	public class EchoManager : MonoBehaviour
 	{
+		// Singleton instance
+		public static EchoManager Instance { get; private set; }
+
+		[SerializeField]
 		private string userName = "Maria";
 
 		public MenuHandler menuHandler;
@@ -12,7 +17,35 @@ namespace ECHO
 		[Header("Tasks table")]
 		public TestTableHandler testTableHandler;
 
+		[Header("exercises")]
+		public ExcerciseDelayedRecall excerciseDelayedRecall;
+
+		public ExcercisePathFollowing excercisePathFollowing;
+
 		private UserInfo userInfo = new UserInfo();
+
+		private void Awake()
+		{
+			// Enforce singleton: allow only one instance and persist it across scenes
+			if (Instance != null && Instance != this)
+			{
+				Debug.LogWarning($"Duplicate {nameof(EchoManager)} on '{gameObject.name}' - destroying duplicate.");
+				Destroy(gameObject);
+				return;
+			}
+
+			Instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
+
+		private void OnDestroy()
+		{
+			// Clear the static reference when the singleton is destroyed
+			if (Instance == this)
+			{
+				Instance = null;
+			}
+		}
 
 		// Start is called once before the first execution of Update after the MonoBehaviour is created
 		private void Start()
@@ -28,19 +61,26 @@ namespace ECHO
 			}
 
 			testTableHandler.Hide();
+			companionHandler.Hide();
 		}
 
+		/// <summary>
+		/// Starts the delayed recall session, initializing any required components and beginning the associated exercise.
+		/// </summary>
 		public void StartDelayedRecallTask()
 		{
 			Debug.Log("-- Starting Delayed Recall Session...");
-			// Add logic to start the delayed recall session
 
 			RevealCompanion();
-			//desplay table after companion task introduction
-			if (testTableHandler != null)
-			{
-				testTableHandler.Show();
-			}
+			excerciseDelayedRecall.StartExercise();
+		}
+
+		internal void StartTask2()
+		{
+			Debug.Log("-- Starting Task 2 Session...");
+			//RevealCompanion();
+			companionHandler.Hide();
+			excercisePathFollowing.StartExcercise();
 		}
 
 		public void RevealCompanion()
