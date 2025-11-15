@@ -21,7 +21,7 @@ namespace ECHO
 		{
 			echoManager = EchoManager.Instance;
 
-			Debug.Log("-- Delayed Recall Exercise Started.");
+			//Debug.Log("-- Delayed Recall Exercise Started.");
 			echoManager.RevealCompanion();
 			echoManager.testTableHandler.ShowDelayedRecall();
 		}

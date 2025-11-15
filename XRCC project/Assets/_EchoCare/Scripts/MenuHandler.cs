@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DG.Tweening;
+using System;
 using UnityEngine;
 
 namespace ECHO
@@ -70,6 +71,7 @@ namespace ECHO
 		{
 			PostitionMenuInFront();
 			welcomeMenu.SetActive(true);
+			welcomeMenu.transform.DOScale(Vector3.one, 0.5f).From(Vector3.zero).SetEase(Ease.OutBack);
 
 			Play(welcomeAudioClip);
 
@@ -81,6 +83,7 @@ namespace ECHO
 			Play(morningClip);
 			welcomeMenu.SetActive(false);
 			dateMenu.SetActive(true);
+			dateMenu.transform.DOScale(Vector3.one, 0.5f).From(Vector3.zero).SetEase(Ease.OutBack);
 		}
 	}
 }
