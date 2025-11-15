@@ -14,6 +14,9 @@ namespace ECHO
 		public GameObject cupPrefab;
 		public GameObject objectHolder;
 
+		[Header("Path Follow")]
+		public GameObject pathFollowPrefab;
+
 		[Header("Table Transform")]
 		public Transform tableTransform;
 
@@ -48,6 +51,12 @@ namespace ECHO
 		internal void Hide()
 		{
 			gameObject.SetActive(false);
+		}
+
+		internal void ShowPathFollowing()
+		{
+			//
+			pathFollowPrefab.SetActive(true);
 		}
 	}
 }
