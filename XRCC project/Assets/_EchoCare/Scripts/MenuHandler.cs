@@ -9,15 +9,38 @@ namespace ECHO
 		public GameObject dateMenu;
 		public GameObject doNextMenu;
 
+		[Header("Audio Clips")]
+		public AudioClip welcomeAudioClip;
+
+		public AudioClip morningClip;
+
+		[Header("Menu Settings")]
 		public float welcomeMenuDuration = 5f;
 
-		//hold list of menus
+		private AudioSource audioSource;
+
+		private OVRCameraRig cameraRig;
+
+		private void Awake()
+		{
+			audioSource = gameObject.GetComponent<AudioSource>();
+			//cameraRig = FindObjectOfType<OVRCameraRig>();
+		}
+
+		private void Play(AudioClip clip)
+		{
+			if (clip != null && audioSource != null)
+			{
+				audioSource.clip = clip;
+				audioSource.Play();
+			}
+		}
 
 		internal void InitializeMenu()
 		{
 			// Initialize menu items here
 			if (welcomeMenu) welcomeMenu.SetActive(true);
-			//PostitionMenuInFront();
+			Play(welcomeAudioClip);
 
 			if (dateMenu) dateMenu.SetActive(false);
 			if (doNextMenu) doNextMenu.SetActive(false);
@@ -26,16 +49,17 @@ namespace ECHO
 			Invoke(nameof(ShowDateMenu), welcomeMenuDuration);
 		}
 
-		private void PostitionMenuInFront()
+		public void PostitionMenuInFront()
 		{
 			//position menu in front of user
+			var pos = cameraRig.centerEyeAnchor.position;
 
 			const float dist = 1.0f;
 			Transform userTransform = Camera.main.transform;
 			Vector3 forward = new Vector3(userTransform.forward.x, 0, userTransform.forward.z).normalized;
 			Vector3 targetPosition = userTransform.position + forward * dist; // 2 meters in front
 
-			targetPosition.y = userTransform.position.y; //plane the companion on the ground level
+			targetPosition.y = userTransform.position.y;
 
 			transform.position = targetPosition;
 			transform.LookAt(new Vector3(userTransform.position.x, transform.position.y, userTransform.position.z));
@@ -45,6 +69,8 @@ namespace ECHO
 		{
 			welcomeMenu.SetActive(false);
 			dateMenu.SetActive(true);
+
+			Play(morningClip);
 		}
 	}
 }
