@@ -5,6 +5,8 @@ namespace ECHO
 {
 	public class TestTableHandler : MonoBehaviour
 	{
+		private const float tableDistance = 0.7f;
+
 		[Header("Prefabs for Table Items")]
 		public GameObject applePrefab;
 
@@ -34,20 +36,25 @@ namespace ECHO
 		// position table in front of user
 		public void PositionInFrontOfUser()
 		{
-			Transform userTransform = Camera.main.transform;
-			Vector3 forward = new Vector3(userTransform.forward.x, 0, userTransform.forward.z).normalized;
-			Vector3 targetPosition = userTransform.position + forward * 1.5f; // 1.5 meters in front
+			print("-- Positioning Table in Front of User...");
+
+			var userTransform = Camera.main.transform;
+			var forward = new Vector3(userTransform.forward.x, 0, userTransform.forward.z).normalized;
+			var targetPosition = userTransform.position + (forward * tableDistance); // 1.5 meters in front
+
 			targetPosition.y = userTransform.position.y - 0.5f; // Slightly lower than eye level
 
-			tableTransform.parent.position = targetPosition;
+			gameObject.transform.position = targetPosition;
 			//tableTransform.LookAt(new Vector3(userTransform.position.x, tableTransform.position.y, userTransform.position.z));
 		}
 
 		internal void ShowDelayedRecall()
 		{
-			print("-- Showing Delayed Recall Table Items...");
+			//print("-- Showing Delayed Recall Table Items...");
+
 			objectHolder.SetActive(true);
 			gameObject.SetActive(true);
+			PositionInFrontOfUser();
 		}
 
 		internal void Hide()
