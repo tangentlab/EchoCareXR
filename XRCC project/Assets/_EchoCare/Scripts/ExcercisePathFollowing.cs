@@ -10,12 +10,13 @@ namespace ECHO
 		internal void StartExcercise()
 		{
 			// show
+			echoManager = EchoManager.Instance;
 			echoManager.testTableHandler.ShowPathFollowing();
 		}
 
 		private void Awake()
 		{
-			echoManager = EchoManager.Instance;
+			//echoManager = EchoManager.Instance;
 		}
 	}
 }

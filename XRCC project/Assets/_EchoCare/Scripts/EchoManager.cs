@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Playables;
 
 namespace ECHO
 {
@@ -11,11 +12,15 @@ namespace ECHO
 		[SerializeField]
 		private string userName = "Maria";
 
+		[SerializeField]
+		private PlayableDirector playableDirector;
 
-		[SerializeField] private OVRCameraRig cameraRig;
+		[SerializeField]
+		private OVRCameraRig cameraRig;
 
 		[Header("Handlers")]
 		public MenuHandler menuHandler;
+
 		public CompanionHandler companionHandler;
 
 		[Header("Tasks table")]
@@ -73,7 +78,9 @@ namespace ECHO
 		/// </summary>
 		public void StartDelayedRecallTask()
 		{
-			Debug.Log("-- Starting Delayed Recall Session...");
+			//Debug.Log("-- Starting Delayed Recall Session...");
+
+			PlayTimeline();
 
 			RevealCompanion();
 			excerciseDelayedRecall.StartExercise();
@@ -95,9 +102,19 @@ namespace ECHO
 			}
 		}
 
-        internal OVRCameraRig GetCameraRig()
+		internal OVRCameraRig GetCameraRig()
 		{
 			return cameraRig;
-        }
-    }
+		}
+
+		public void PlayTimeline(PlayableAsset timelineAsset = null)
+		{
+			if (playableDirector == null) return;
+
+			if (timelineAsset)
+				playableDirector.playableAsset = timelineAsset;
+
+			playableDirector.Play();
+		}
+	}
 }

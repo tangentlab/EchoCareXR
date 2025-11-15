@@ -34,7 +34,7 @@ namespace ECHO
 		public void OnStartDayButtonPressed()
 		{
 			// Logic to start the day
-			Debug.Log("Start Day button pressed.");
+			//Debug.Log("Start Day button pressed.");
 			menuAction?.Invoke();
 		}
 	}
