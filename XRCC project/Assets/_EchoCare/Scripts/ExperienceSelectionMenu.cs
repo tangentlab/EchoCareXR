@@ -16,7 +16,7 @@ namespace ECHO
 
 		public void SelectDelayed()
 		{
-			print("-- Delayed Recall selected.");
+			//print("-- Delayed Recall selected.");
 			gameObject.SetActive(false);
 			echoManager.StartDelayedRecallTask();
 		}

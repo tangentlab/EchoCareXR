@@ -55,6 +55,7 @@ namespace ECHO
 		{
 			//throw new NotImplementedException();
 			//PlayVoice();
+			print("-- Revealing Companion...");
 			gameObject.SetActive(true);
 			PositionInfrontOfUser();
 		}

@@ -43,8 +43,10 @@ namespace ECHO
 			//tableTransform.LookAt(new Vector3(userTransform.position.x, tableTransform.position.y, userTransform.position.z));
 		}
 
-		internal void Show()
+		internal void ShowDelayedRecall()
 		{
+			print("-- Showing Delayed Recall Table Items...");
+			objectHolder.SetActive(true);
 			gameObject.SetActive(true);
 		}
 

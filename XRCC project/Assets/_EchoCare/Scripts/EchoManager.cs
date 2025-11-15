@@ -11,11 +11,11 @@ namespace ECHO
 		[SerializeField]
 		private string userName = "Maria";
 
-
 		[SerializeField] private OVRCameraRig cameraRig;
 
 		[Header("Handlers")]
 		public MenuHandler menuHandler;
+
 		public CompanionHandler companionHandler;
 
 		[Header("Tasks table")]
@@ -73,7 +73,7 @@ namespace ECHO
 		/// </summary>
 		public void StartDelayedRecallTask()
 		{
-			Debug.Log("-- Starting Delayed Recall Session...");
+			//Debug.Log("-- Starting Delayed Recall Session...");
 
 			RevealCompanion();
 			excerciseDelayedRecall.StartExercise();
@@ -95,9 +95,9 @@ namespace ECHO
 			}
 		}
 
-        internal OVRCameraRig GetCameraRig()
+		internal OVRCameraRig GetCameraRig()
 		{
 			return cameraRig;
-        }
-    }
+		}
+	}
 }

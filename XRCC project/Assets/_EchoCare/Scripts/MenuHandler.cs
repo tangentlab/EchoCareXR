@@ -40,11 +40,8 @@ namespace ECHO
 
 		internal void InitializeMenu()
 		{
-
-
 			// Initialize menu items here
 			if (welcomeMenu) welcomeMenu.SetActive(false);
-
 
 			if (dateMenu) dateMenu.SetActive(false);
 			if (doNextMenu) doNextMenu.SetActive(false);
@@ -58,7 +55,7 @@ namespace ECHO
 			//position menu in front of user
 			var pos = cameraRig.centerEyeAnchor.position;
 
-			const float dist = 1.0f;
+			const float dist = 0.5f;
 			var userTransform = Camera.main.transform;
 			var forward = new Vector3(userTransform.forward.x, 0, userTransform.forward.z).normalized;
 			var targetPosition = userTransform.position + forward * dist; // 2 meters in front
