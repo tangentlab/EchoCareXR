@@ -12,11 +12,11 @@ namespace ECHO
 		[SerializeField]
 		private string userName = "Maria";
 
-		[SerializeField] private PlayableDirector playableDirector;
+		[SerializeField]
+		private PlayableDirector playableDirector;
 
-
-
-		[SerializeField] private OVRCameraRig cameraRig;
+		[SerializeField]
+		private OVRCameraRig cameraRig;
 
 		[Header("Handlers")]
 		public MenuHandler menuHandler;
@@ -80,8 +80,9 @@ namespace ECHO
 		{
 			//Debug.Log("-- Starting Delayed Recall Session...");
 
-			RevealCompanion();
-			excerciseDelayedRecall.StartExercise();
+			PlayTimeline();
+			//RevealCompanion();
+			//excerciseDelayedRecall.StartExercise();
 		}
 
 		internal void StartTask2()
@@ -105,7 +106,7 @@ namespace ECHO
 			return cameraRig;
 		}
 
-		private void PlayTimeline(PlayableAsset timelineAsset = null)
+		public void PlayTimeline(PlayableAsset timelineAsset = null)
 		{
 			if (playableDirector == null) return;
 
