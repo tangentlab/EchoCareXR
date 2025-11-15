@@ -51,8 +51,8 @@ namespace ECHO
 		private void Start()
 		{
 			userInfo = new UserInfo(userName);
-			print("EchoManager started.");
-			print($"User Name: {userInfo.userName}");
+			//print("EchoManager started.");
+			//print($"User Name: {userInfo.userName}");
 
 			// Initialize Menu
 			if (menuHandler != null)
