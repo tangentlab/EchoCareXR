@@ -5,6 +5,7 @@ namespace ECHO
 {
 	public class CompanionHandler : MonoBehaviour
 	{
+		private const float genDist = 1.5f;
 		public AudioClip welcome;
 		public AudioClip greeting;
 
@@ -43,7 +44,7 @@ namespace ECHO
 			// Position the companion 2 meters in front of the user
 			Transform userTransform = Camera.main.transform;
 			Vector3 forward = new Vector3(userTransform.forward.x, 0, userTransform.forward.z).normalized;
-			Vector3 targetPosition = userTransform.position + forward * 2.0f; // 2 meters in front
+			Vector3 targetPosition = userTransform.position + forward * genDist; // 2 meters in front
 
 			targetPosition.y = 0; //plane the companion on the ground level
 

@@ -96,10 +96,11 @@ namespace ECHO
 
 		public void RevealCompanion()
 		{
-			if (companionHandler != null)
+			if (companionHandler == null)
 			{
-				companionHandler.RevealCompanion();
+				return;
 			}
+			companionHandler.RevealCompanion();
 		}
 
 		internal OVRCameraRig GetCameraRig()
@@ -111,8 +112,7 @@ namespace ECHO
 		{
 			if (playableDirector == null) return;
 
-			if (timelineAsset)
-				playableDirector.playableAsset = timelineAsset;
+			if (timelineAsset) playableDirector.playableAsset = timelineAsset;
 
 			playableDirector.Play();
 		}
