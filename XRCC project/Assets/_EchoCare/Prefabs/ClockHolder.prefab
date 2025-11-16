@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1471913760850791210}
+  - component: {fileID: 7074222809903758003}
   m_Layer: 0
   m_Name: ClockHolder
   m_TagString: Untagged
@@ -32,6 +33,18 @@ Transform:
   - {fileID: 5884516102131580362}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7074222809903758003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9066300689048605088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c098f8fca7c9946a820a15935c6867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ECHO.DoTweenIn
 --- !u!1001 &4895247026699412712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54,7 +67,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1316573965072390434, guid: 741354b2e2ce2a44d8230994c86476ae, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1316573965072390434, guid: 741354b2e2ce2a44d8230994c86476ae, type: 3}
       propertyPath: m_LocalRotation.x
@@ -62,7 +75,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1316573965072390434, guid: 741354b2e2ce2a44d8230994c86476ae, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1316573965072390434, guid: 741354b2e2ce2a44d8230994c86476ae, type: 3}
       propertyPath: m_LocalRotation.z
@@ -74,7 +87,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1316573965072390434, guid: 741354b2e2ce2a44d8230994c86476ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 1316573965072390434, guid: 741354b2e2ce2a44d8230994c86476ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
