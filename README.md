@@ -2,6 +2,8 @@
 Submission for XRCC 
 https://www.xrcc.events/
 ---
+Trailer https://www.youtube.com/watch?v=1mRM9wfzRZY
+
 Our mixed reality app features spatial video memories, voice notes from family members, and interactive reminders for medications and meals. 
 
 Patients can enjoy gamified cognitive tests, while caregivers benefit from training modules, patient progress dashboard, and humanoid companion integration. 
