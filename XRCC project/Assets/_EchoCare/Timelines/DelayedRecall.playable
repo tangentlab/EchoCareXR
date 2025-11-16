@@ -505,7 +505,6 @@ MonoBehaviour:
   m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
   m_Children:
-  - {fileID: 8158336821259783265}
   - {fileID: 1778965279912197226}
   - {fileID: -7684610961199224266}
   - {fileID: 976305997694345569}
@@ -738,7 +737,7 @@ MonoBehaviour:
     m_Start: 9.883333333333333
     m_ClipIn: 0
     m_Asset: {fileID: 5360199108932261298}
-    m_Duration: 74.58333333333334
+    m_Duration: 49.416666666666664
     m_TimeScale: 1
     m_ParentTrack: {fileID: -4042895565425151043}
     m_EaseInDuration: 0
@@ -853,7 +852,7 @@ MonoBehaviour:
   m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
+  m_Parent: {fileID: 366994931484637259}
   m_Children: []
   m_Clips:
   - m_Version: 1
@@ -946,7 +945,7 @@ MonoBehaviour:
   m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
+  m_Parent: {fileID: 366994931484637259}
   m_Children: []
   m_Clips:
   - m_Version: 1
@@ -1045,7 +1044,7 @@ MonoBehaviour:
     m_Start: 6.183333333333334
     m_ClipIn: 0
     m_Asset: {fileID: 1312767751766131639}
-    m_Duration: 78.28333333333333
+    m_Duration: 53.11666666666666
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1970096414932716751}
     m_EaseInDuration: 0
@@ -1230,29 +1229,6 @@ MonoBehaviour:
   m_Clips: []
   m_Markers:
     m_Objects: []
---- !u!114 &-296242711017536004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a16748d9461eae46a725db9776d5390, type: 3}
-  m_Name: Markers
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.MarkerTrack
-  m_Version: 3
-  m_AnimClip: {fileID: 0}
-  m_Locked: 0
-  m_Muted: 0
-  m_CustomPlayableFullTypename: 
-  m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
-  m_Children: []
-  m_Clips: []
-  m_Markers:
-    m_Objects: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1267,23 +1243,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.TimelineAsset
   m_Version: 0
   m_Tracks:
+  - {fileID: 8158336821259783265}
   - {fileID: 1130660669992880757}
   - {fileID: -451260184618615541}
   - {fileID: -5509015488421493593}
   - {fileID: 3986932453472958397}
   - {fileID: 8914688785688881521}
   - {fileID: 3770019993135666996}
-  - {fileID: 4992517544180446957}
   - {fileID: 366994931484637259}
-  - {fileID: -2779809055288776724}
-  - {fileID: -1998753455597045254}
   - {fileID: -572230612151071346}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
     m_ScenePreview: 1
   m_DurationMode: 0
-  m_MarkerTrack: {fileID: -296242711017536004}
+  m_MarkerTrack: {fileID: 0}
 --- !u!114 &7670583554985054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1410,7 +1384,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0fc6f5187a81dc47999eefade6f0935, type: 3}
-  m_Name: Track Group
+  m_Name: UI
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.GroupTrack
   m_Version: 3
   m_AnimClip: {fileID: 0}
@@ -1419,7 +1393,10 @@ MonoBehaviour:
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
-  m_Children: []
+  m_Children:
+  - {fileID: 4992517544180446957}
+  - {fileID: -1998753455597045254}
+  - {fileID: -2779809055288776724}
   m_Clips: []
   m_Markers:
     m_Objects: []
@@ -1926,7 +1903,7 @@ MonoBehaviour:
     m_Start: 8.933333333333334
     m_ClipIn: 0
     m_Asset: {fileID: -4554140270639688222}
-    m_Duration: 75.53333333333333
+    m_Duration: 50.36666666666666
     m_TimeScale: 1
     m_ParentTrack: {fileID: 2884937444328238838}
     m_EaseInDuration: 0
@@ -2401,7 +2378,7 @@ MonoBehaviour:
   m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
+  m_Parent: {fileID: 366994931484637259}
   m_Children: []
   m_Clips:
   - m_Version: 1
@@ -2662,7 +2639,7 @@ MonoBehaviour:
     m_Start: 8.061394867657995
     m_ClipIn: 0
     m_Asset: {fileID: -8349564262253841099}
-    m_Duration: 76.40527179900867
+    m_Duration: 51.238605132342
     m_TimeScale: 1
     m_ParentTrack: {fileID: 6658567932635178786}
     m_EaseInDuration: 0
@@ -2772,7 +2749,7 @@ MonoBehaviour:
     m_Start: 11.166666666666666
     m_ClipIn: 0
     m_Asset: {fileID: -2897352374492859517}
-    m_Duration: 73.3
+    m_Duration: 48.13333333333333
     m_TimeScale: 1
     m_ParentTrack: {fileID: 7575170053818302157}
     m_EaseInDuration: 0
@@ -2858,7 +2835,7 @@ MonoBehaviour:
   m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
-  m_Parent: {fileID: -5509015488421493593}
+  m_Parent: {fileID: 11400000}
   m_Children: []
   m_Clips:
   - m_Version: 1
