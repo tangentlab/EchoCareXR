@@ -5,37 +5,36 @@ using UnityEngine.Events;
 
 namespace ECHO
 {
-	public class GoodMorningMenu : MonoBehaviour
-	{
-		public TextMeshProUGUI welcomeText;
-		public TextMeshProUGUI dateText;
+    public class GoodMorningMenu : MonoBehaviour
+    {
+        public TextMeshProUGUI welcomeText;
+        public TextMeshProUGUI dateText;
 
-		// define action for public trigger
-		[Header("Menu Actions")]
-		public UnityEvent menuAction;
+        // define action for public trigger
+        [Header("Menu Actions")]
+        public UnityEvent menuAction;
 
-		private MenuHandler menuHandler;
+        private MenuHandler menuHandler;
 
-		// Start is called once before the first execution of Update after the MonoBehaviour is created
-		private void Start()
-		{
-			UpdateText();
-		}
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        private void Start()
+        {
+            UpdateText();
+        }
 
-		private void UpdateText()
-		{
-			//update date text
-			if (dateText != null)
-			{
-				dateText.text = $"Today is {DateTime.Now:MMMM dd}";
-			}
-		}
+        private void UpdateText()
+        {
+            //update date text
+            if (dateText == null)
+                return;
 
-		public void OnStartDayButtonPressed()
-		{
-			// Logic to start the day
+            dateText.text = $"Today is {DateTime.Now:MMMM dd}";
+        }
 
-			menuAction?.Invoke();
-		}
-	}
+        public void OnStartDayButtonPressed()
+        {
+            // Logic to start the day
+            menuAction?.Invoke();
+        }
+    }
 }
