@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace ECHO
@@ -6,8 +5,6 @@ namespace ECHO
 	public class CompanionHandler : MonoBehaviour
 	{
 		private const float genDist = 1.5f;
-		public AudioClip welcome;
-		public AudioClip greeting;
 
 		[Header("Task Clips")]
 		public AudioClip taskIntroduction;
@@ -22,29 +19,21 @@ namespace ECHO
 			Hide();
 		}
 
-		// Update is called once per frame
-		private void Update()
-		{
-			//maybe some animation or idle behavior
-		}
-
 		private void PlayVoice()
 		{
-			if (agentAudioClip != null)
-			{
-				// player after a short delay
+			if (agentAudioClip == null) return;
+			// player after a short delay
 
-				audioSource.clip = agentAudioClip;
-				audioSource.Play();
-			}
+			audioSource.clip = agentAudioClip;
+			audioSource.Play();
 		}
 
 		public void PositionInfrontOfUser()
 		{
 			// Position the companion 2 meters in front of the user
-			Transform userTransform = Camera.main.transform;
-			Vector3 forward = new Vector3(userTransform.forward.x, 0, userTransform.forward.z).normalized;
-			Vector3 targetPosition = userTransform.position + forward * genDist; // 2 meters in front
+			var userTransform = Camera.main.transform;
+			var forward = new Vector3(userTransform.forward.x, 0, userTransform.forward.z).normalized;
+			var targetPosition = userTransform.position + forward * genDist; // 2 meters in front
 
 			targetPosition.y = 0; //plane the companion on the ground level
 
@@ -54,9 +43,7 @@ namespace ECHO
 
 		internal void RevealCompanion()
 		{
-			//throw new NotImplementedException();
-			//PlayVoice();
-			print("-- Revealing Companion...");
+			//print("-- Revealing Companion...");
 			gameObject.SetActive(true);
 			PositionInfrontOfUser();
 		}

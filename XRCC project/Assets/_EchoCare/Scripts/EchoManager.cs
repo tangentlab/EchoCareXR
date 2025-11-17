@@ -4,117 +4,116 @@ using UnityEngine.Playables;
 
 namespace ECHO
 {
-	public class EchoManager : MonoBehaviour
-	{
-		// Singleton instance
-		public static EchoManager Instance { get; private set; }
+    public class EchoManager : MonoBehaviour
+    {
+        // Singleton instance
+        public static EchoManager Instance { get; private set; }
 
-		[SerializeField]
-		private string userName = "Maria";
+        [SerializeField]
+        private string userName = "Maria";
 
-		[SerializeField]
-		private PlayableDirector playableDirector;
+        [SerializeField]
+        private PlayableDirector playableDirector;
 
-		[SerializeField]
-		private OVRCameraRig cameraRig;
+        [SerializeField]
+        private OVRCameraRig cameraRig;
 
-		[Header("Handlers")]
-		public MenuHandler menuHandler;
+        [Header("Handlers")]
+        public MenuHandler menuHandler;
 
-		public CompanionHandler companionHandler;
+        public CompanionHandler companionHandler;
 
-		[Header("Tasks table")]
-		public TestTableHandler testTableHandler;
+        [Header("Tasks table")]
+        public TestTableHandler testTableHandler;
 
-		[Header("exercises")]
-		public ExcerciseDelayedRecall excerciseDelayedRecall;
+        [Header("exercises")]
+        public ExcerciseDelayedRecall excerciseDelayedRecall;
 
-		public ExcercisePathFollowing excercisePathFollowing;
+        public ExcercisePathFollowing excercisePathFollowing;
 
-		private UserInfo userInfo = new UserInfo();
+        private UserInfo userInfo = new UserInfo();
 
-		private void Awake()
-		{
-			// Enforce singleton: allow only one instance and persist it across scenes
-			if (Instance != null && Instance != this)
-			{
-				Debug.LogWarning($"Duplicate {nameof(EchoManager)} on '{gameObject.name}' - destroying duplicate.");
-				Destroy(gameObject);
-				return;
-			}
+        private void Awake()
+        {
+            // Enforce singleton: allow only one instance and persist it across scenes
+            if (Instance != null && Instance != this)
+            {
+                Debug.LogWarning(
+                    $"-- Duplicate {nameof(EchoManager)} on '{gameObject.name}' - destroying duplicate."
+                );
+                Destroy(gameObject);
+                return;
+            }
 
-			Instance = this;
-			DontDestroyOnLoad(gameObject);
-		}
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
 
-		private void OnDestroy()
-		{
-			// Clear the static reference when the singleton is destroyed
-			if (Instance == this)
-			{
-				Instance = null;
-			}
-		}
+        private void OnDestroy()
+        {
+            // Clear the static reference when the singleton is destroyed
+            if (Instance == this)
+            {
+                Instance = null;
+            }
+        }
 
-		// Start is called once before the first execution of Update after the MonoBehaviour is created
-		private void Start()
-		{
-			userInfo = new UserInfo(userName);
-			//print("EchoManager started.");
-			//print($"User Name: {userInfo.userName}");
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        private void Start()
+        {
+            userInfo = new UserInfo(userName);
 
-			// Initialize Menu
-			if (menuHandler != null)
-			{
-				menuHandler.InitializeMenu();
-			}
+            // Initialize Menu
+            if (menuHandler != null)
+            {
+                menuHandler.InitializeMenu();
+            }
 
-			testTableHandler.Hide();
-			companionHandler.Hide();
-		}
+            testTableHandler.Hide();
+            companionHandler.Hide();
+        }
 
-		/// <summary>
-		/// Starts the delayed recall session, initializing any required components and beginning the associated exercise.
-		/// </summary>
-		public void StartDelayedRecallTask()
-		{
-			//Debug.Log("-- Starting Delayed Recall Session...");
+        /// <summary>
+        /// Starts the delayed recall session, initializing any required components and beginning the associated exercise.
+        /// </summary>
+        public void StartDelayedRecallTask()
+        {
+            PlayTimeline();
 
-			PlayTimeline();
+            RevealCompanion();
+            excerciseDelayedRecall.StartExercise();
+        }
 
-			RevealCompanion();
-			excerciseDelayedRecall.StartExercise();
-		}
+        internal void StartTask2()
+        {
+            Debug.Log("-- Starting Task 2 Session...");
+            //RevealCompanion();
+            companionHandler.Hide();
+            excercisePathFollowing.StartExcercise();
+        }
 
-		internal void StartTask2()
-		{
-			Debug.Log("-- Starting Task 2 Session...");
-			//RevealCompanion();
-			companionHandler.Hide();
-			excercisePathFollowing.StartExcercise();
-		}
+        public void RevealCompanion()
+        {
+            if (companionHandler == null)
+                return;
 
-		public void RevealCompanion()
-		{
-			if (companionHandler == null)
-			{
-				return;
-			}
-			companionHandler.RevealCompanion();
-		}
+            companionHandler.RevealCompanion();
+        }
 
-		internal OVRCameraRig GetCameraRig()
-		{
-			return cameraRig;
-		}
+        internal OVRCameraRig GetCameraRig()
+        {
+            return cameraRig;
+        }
 
-		public void PlayTimeline(PlayableAsset timelineAsset = null)
-		{
-			if (playableDirector == null) return;
+        public void PlayTimeline(PlayableAsset timelineAsset = null)
+        {
+            if (playableDirector == null)
+                return;
 
-			if (timelineAsset) playableDirector.playableAsset = timelineAsset;
+            if (timelineAsset)
+                playableDirector.playableAsset = timelineAsset;
 
-			playableDirector.Play();
-		}
-	}
+            playableDirector.Play();
+        }
+    }
 }
