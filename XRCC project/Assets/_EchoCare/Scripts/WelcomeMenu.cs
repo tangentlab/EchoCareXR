@@ -1,21 +1,24 @@
 using TMPro;
 using UnityEngine;
 
-public class WelcomeMenu : MonoBehaviour
+namespace ECHO
 {
-    public TextMeshProUGUI helloText;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class WelcomeMenu : MonoBehaviour
     {
-        UpdateText();
-    }
+        public TextMeshProUGUI helloText;
 
-    private void UpdateText()
-    {
-        if (helloText != null)
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start()
         {
-            helloText.text = "Hello, " + PlayerPrefs.GetString("UserName", "Maria") + "!";
+            UpdateText();
+        }
+
+        private void UpdateText()
+        {
+            if (helloText != null)
+            {
+                helloText.text = "Hello, " + PlayerPrefs.GetString("UserName", "Maria") + "!";
+            }
         }
     }
 }

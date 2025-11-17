@@ -10,7 +10,6 @@ namespace ECHO
         public void OnMenuButtonPressed()
         {
             // Logic to handle menu button press
-            Debug.Log("Menu button pressed.");
             menuAction?.Invoke();
         }
     }

@@ -2,28 +2,24 @@ using UnityEngine;
 
 namespace ECHO
 {
-	public class ExcerciseDelayedRecall : MonoBehaviour
-	{
-		[SerializeField] private AudioClip[] clips;
+    public class ExcerciseDelayedRecall : MonoBehaviour
+    {
+        [SerializeField]
+        private AudioClip[] clips;
 
-		private EchoManager echoManager;
+        private EchoManager echoManager;
 
-		private void Awake()
-		{
-			//echoManager = EchoManager.Instance;
-			//if (echoManager == null)
-			//{
-			//	Debug.LogError("-- EchoManager instance not found!");
-			//}
-		}
+        //get echo manager instance
+        private EchoManager EM => EchoManager.Instance;
 
-		internal void StartExercise()
-		{
-			echoManager = EchoManager.Instance;
+        private void Awake() { }
 
-			//Debug.Log("-- Delayed Recall Exercise Started.");
-			echoManager.RevealCompanion();
-			echoManager.testTableHandler.ShowDelayedRecall();
-		}
-	}
+        internal void StartExercise()
+        {
+            echoManager = EchoManager.Instance;
+
+            echoManager.RevealCompanion();
+            echoManager.testTableHandler.ShowDelayedRecall();
+        }
+    }
 }
