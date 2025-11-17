@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 3903025477131610645}
   - component: {fileID: 6360173109837335930}
   - component: {fileID: 569609051729566466}
+  - component: {fileID: 2489617499026256358}
   m_Layer: 0
   m_Name: Companion
   m_TagString: Untagged
@@ -259,7 +260,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d8d882084701d4ea364ba083d8c6b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  agentAudioClip: {fileID: 8300000, guid: 33b625d314d297340bbde04fd73e4ff6, type: 3}
+  welcome: {fileID: 0}
+  greeting: {fileID: 0}
+  taskIntroduction: {fileID: 0}
 --- !u!135 &569609051729566466
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -281,6 +284,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2489617499026256358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2990715390615524269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c098f8fca7c9946a820a15935c6867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ECHO.DoTweenIn
 --- !u!1 &7020162742008249259
 GameObject:
   m_ObjectHideFlags: 0

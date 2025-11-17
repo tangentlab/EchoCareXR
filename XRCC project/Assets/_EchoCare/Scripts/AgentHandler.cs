@@ -1,58 +1,67 @@
-using System;
 using UnityEngine;
 
 namespace ECHO
 {
-	public class CompanionHandler : MonoBehaviour
-	{
-		public AudioClip agentAudioClip;
+    public class CompanionHandler : MonoBehaviour
+    {
+        private const float genDist = 1.5f;
 
-		// Start is called once before the first execution of Update after the MonoBehaviour is created
-		private void Start()
-		{
-			gameObject.SetActive(false);
-		}
+        [Header("Task Clips")]
+        public AudioClip taskIntroduction;
 
-		// Update is called once per frame
-		private void Update()
-		{
-		}
+        private AudioClip agentAudioClip;
+        private AudioSource audioSource;
 
-		private void PlayVoice()
-		{
-			//agentAudioClip = Resources.Load<AudioClip>("Audio/Agent/starting delayed recall");
-			if (agentAudioClip != null)
-			{
-				// player after a short delay
-				AudioSource audioSource = gameObject.AddComponent<AudioSource>();
-				audioSource.clip = agentAudioClip;
-				audioSource.PlayDelayed(5);
-			}
-			else
-			{
-				Debug.LogWarning("Agent audio clip not found in Resources/Audio/Agent/agent_greeting");
-			}
-		}
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        private void Start()
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            Hide();
+        }
 
-		public void PositionInfrontOfUser()
-		{
-			// Position the companion 2 meters in front of the user
-			Transform userTransform = Camera.main.transform;
-			Vector3 forward = new Vector3(userTransform.forward.x, 0, userTransform.forward.z).normalized;
-			Vector3 targetPosition = userTransform.position + forward * 2.0f; // 2 meters in front
+        private void PlayVoice()
+        {
+            if (agentAudioClip == null)
+                return;
+            // player after a short delay
 
-			targetPosition.y = 0; //plane the companion on the ground level
+            audioSource.clip = agentAudioClip;
+            audioSource.Play();
+        }
 
-			transform.position = targetPosition;
-			transform.LookAt(new Vector3(userTransform.position.x, transform.position.y, userTransform.position.z));
-		}
+        public void PositionInfrontOfUser()
+        {
+            // Position the companion 2 meters in front of the user
+            var userTransform = Camera.main.transform;
+            var forward = new Vector3(
+                userTransform.forward.x,
+                0,
+                userTransform.forward.z
+            ).normalized;
+            var targetPosition = userTransform.position + forward * genDist; // 2 meters in front
 
-		internal void RevealCompanion()
-		{
-			//throw new NotImplementedException();
-			//PlayVoice();
-			gameObject.SetActive(true);
-			PositionInfrontOfUser();
-		}
-	}
+            targetPosition.y = 0; //plane the companion on the ground level
+
+            transform.position = targetPosition;
+            transform.LookAt(
+                new Vector3(
+                    userTransform.position.x,
+                    transform.position.y,
+                    userTransform.position.z
+                )
+            );
+        }
+
+        internal void RevealCompanion()
+        {
+            //print("-- Revealing Companion...");
+            gameObject.SetActive(true);
+            PositionInfrontOfUser();
+        }
+
+        internal void Hide()
+        {
+            gameObject.SetActive(false);
+        }
+    }
 }
